@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+@model List<PetStore.ViewModels.OwnerViewModel>;
+
+<div>
+    @if (Model != null)
+    {
+        @foreach (var owner in Model)
+        {
+            <b>@owner.Gender</b>
+            <ul>
+                @foreach (var petName in owner.PetNames)
+                {
+                    <li>@petName</li>
+                }
+            </ul>
+            <br />
+        }
+    }
+</div>
